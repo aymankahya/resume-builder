@@ -1,4 +1,4 @@
-import "../../styles/PageScroller.scss";
+import "../../styles/pageScroller.scss";
 
 function PageScroller() {
   return (
