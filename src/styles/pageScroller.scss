@@ -1,0 +1,39 @@
+@import "main.scss";
+
+.page-scroller {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  p {
+    margin: 0;
+    color: $page-scroller-text-color;
+    font-weight: 500;
+  }
+
+  svg {
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    path {
+      &:nth-child(2) {
+        fill: lighten($page-scroller-nav-button, 30%);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      path {
+        &:nth-child(2) {
+          fill: $page-scroller-nav-button;
+          @include transition-ease;
+        }
+      }
+    }
+  }
+}

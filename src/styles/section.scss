@@ -1,0 +1,567 @@
+@import "main.scss";
+
+.section {
+  padding: $section-padding-top-bottom $builder-padding-sides;
+  border-bottom: 1px solid $seperator-line-color;
+
+  &.hidden {
+    padding-bottom: 0;
+
+    &-title.hidden {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    @include transition-ease;
+
+    &.hidden {
+      color: $section-title-hidden;
+      @include transition-ease;
+
+      svg {
+        stroke: $section-title-hidden;
+        transform: rotate(0deg);
+      }
+    }
+
+    svg {
+      height: 2rem;
+      stroke: black;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+      transform: rotate(180deg);
+      @include transition-ease;
+    }
+  }
+
+  &-form {
+    .description {
+      margin: 0;
+      margin-top: 0.5rem;
+      color: $section-description-color;
+      font-size: 0.95rem;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 0;
+      overflow: visible;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      transform: scaleY(0);
+
+      &.shown {
+        transform: scaleY(1);
+        transform-origin: top;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      div {
+        display: flex;
+        gap: 3rem;
+      }
+
+      .additional-info {
+        display: none;
+        &.shown {
+          @extend div;
+        }
+      }
+
+      .add-button {
+        background: none;
+        border: none;
+        outline: none;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: max-content;
+        color: lighten($add-button-color, 25%);
+        font-weight: 500;
+        margin-top: 1rem;
+        @include transition-ease;
+
+        &:hover {
+          color: $add-button-color;
+          cursor: pointer;
+          @include transition-ease;
+
+          .add-button-round {
+            transform: scale(1.3);
+            background-color: $add-button-bg-color;
+            @include transition-ease;
+
+            svg {
+              stroke: $add-button-color;
+              @include transition-ease;
+            }
+          }
+        }
+
+        &-round {
+          display: grid;
+          place-content: center;
+          background-color: lighten($add-button-bg-color, 2%);
+          height: 2rem;
+          width: 2rem;
+          border-radius: 100%;
+          @include transition-ease;
+
+          svg {
+            width: 1.5rem;
+            stroke: lighten($add-button-color, 25%);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            @include transition-ease;
+          }
+        }
+      }
+    }
+
+    .additional-info-btn {
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      color: $additional-info-btn-color-inactive;
+      font-weight: 500;
+      cursor: pointer;
+      @include transition-ease;
+
+      svg {
+        stroke: $additional-info-btn-color-inactive;
+        stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        height: 1.5rem;
+        pointer-events: none;
+        @include transition-ease;
+      }
+      svg.enabled {
+        transform: rotate(180deg);
+        transition: transform 0.3s linear;
+      }
+
+      &:hover {
+        color: $additional-info-btn-color-active;
+
+        svg {
+          stroke: $additional-info-btn-color-active;
+        }
+      }
+    }
+
+    .input-field {
+      position: relative;
+      width: 100%;
+
+      &.period {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      input {
+        border: 1px solid $input-border-color;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: calc(1rem + 1px);
+        margin-top: 1.5rem;
+        width: 100%;
+        font-size: 0.9rem;
+        color: $primary-text-color;
+        outline: none;
+        transition: border-color 0.2s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &::placeholder {
+          font-size: 0.9rem;
+          color: $placeholder-text-color;
+        }
+
+        &:focus {
+          border-width: 2px;
+          padding: 1rem;
+          border-color: black;
+          transition: border-color 0.3s ease-in-out;
+        }
+
+        &:valid:not(:focus) {
+          background-color: $valid-input-bg-color;
+        }
+      }
+
+      textarea {
+        @extend input;
+        resize: vertical;
+        height: 6rem;
+      }
+
+      label {
+        position: absolute;
+        left: 2px;
+        top: 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $label-text-color;
+      }
+
+      svg {
+        width: 6rem;
+        stroke: black;
+        stroke-width: 2;
+        fill: none;
+        margin-top: 1.5rem;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    }
+
+    .experience {
+      display: flex;
+      flex-direction: column !important;
+      gap: 2rem !important;
+      margin-bottom: 1rem;
+
+      &-upper {
+        position: relative;
+        height: 3rem;
+
+        &-btn {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: calc(100% + 2rem);
+          background: none;
+          outline: none;
+          border: none;
+          padding: 1rem;
+          top: -1rem;
+          left: -1rem;
+
+          &:hover {
+            background-color: $experience-summary-hover-bg;
+            border-radius: 1rem;
+            cursor: pointer;
+          }
+        }
+
+        .delete-experience {
+          position: absolute;
+          right: -4rem;
+          top: 0.5rem;
+          border: none;
+          outline: none;
+          background: none;
+
+          &:hover {
+            cursor: pointer;
+
+            svg {
+              stroke: red;
+              @include transition-ease;
+            }
+          }
+
+          svg {
+            height: 1.8rem;
+            stroke-width: 1.4;
+            stroke: $seperator-line-color;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            pointer-events: none;
+            @include transition-ease;
+          }
+        }
+
+        .expandExperience {
+          width: 1.5rem;
+          fill: none;
+          stroke: black;
+          stroke-width: 1.5;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transform: rotate(180deg);
+          @include transition-ease;
+
+          &.expanded {
+            transform: rotate(0);
+            @include transition-ease;
+          }
+        }
+
+        #experience-upper-summary {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          width: fit-content;
+
+          #status {
+            display: grid;
+            place-content: center;
+            background-color: $experience-status-color;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 100%;
+
+            svg {
+              stroke: $section-description-color;
+              stroke-width: 1.5;
+              fill: none;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              height: 1.5rem;
+              width: 1.5rem;
+            }
+
+            &-valid {
+              @extend #status;
+              background-color: $experience-valid-status-color;
+              animation: experienceStatusPop 0.4s ease-in-out;
+
+              svg {
+                stroke: white;
+                stroke-width: 1.5;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                height: 1.5rem;
+                width: 1.5rem;
+              }
+            }
+          }
+
+          #summary {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+
+            h1 {
+              margin: 0;
+              font-size: 1rem;
+            }
+
+            p {
+              margin: 0;
+              font-size: 0.9rem;
+              color: $experience-period-color;
+            }
+          }
+        }
+      }
+
+      &-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem !important;
+
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+
+    .education {
+      display: flex;
+      flex-direction: column !important;
+      gap: 2rem !important;
+      margin-bottom: 1rem;
+
+      &-upper {
+        position: relative;
+        height: 3rem;
+
+        &-btn {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: calc(100% + 2rem);
+          background: none;
+          outline: none;
+          border: none;
+          padding: 1rem;
+          top: -1rem;
+          left: -1rem;
+
+          &:hover {
+            background-color: $experience-summary-hover-bg;
+            border-radius: 1rem;
+            cursor: pointer;
+          }
+        }
+
+        .delete-education {
+          position: absolute;
+          right: -4rem;
+          top: 0.5rem;
+          border: none;
+          outline: none;
+          background: none;
+
+          &:hover {
+            cursor: pointer;
+
+            svg {
+              stroke: red;
+              @include transition-ease;
+            }
+          }
+
+          svg {
+            height: 1.8rem;
+            stroke-width: 1.4;
+            stroke: $seperator-line-color;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            pointer-events: none;
+            @include transition-ease;
+          }
+        }
+
+        .expandEducation {
+          width: 1.5rem;
+          fill: none;
+          stroke: black;
+          stroke-width: 1.5;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transform: rotate(180deg);
+          @include transition-ease;
+
+          &.expanded {
+            transform: rotate(0);
+            @include transition-ease;
+          }
+        }
+
+        #education-upper-summary {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          width: fit-content;
+
+          #status {
+            display: grid;
+            place-content: center;
+            background-color: $experience-status-color;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 100%;
+
+            svg {
+              stroke: $section-description-color;
+              stroke-width: 1.5;
+              fill: none;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              height: 1.5rem;
+              width: 1.5rem;
+            }
+
+            &-valid {
+              @extend #status;
+              background-color: $experience-valid-status-color;
+              animation: experienceStatusPop 0.4s ease-in-out;
+
+              svg {
+                stroke: white;
+                stroke-width: 1.5;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                height: 1.5rem;
+                width: 1.5rem;
+              }
+            }
+          }
+
+          #summary {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 5px;
+
+            h1 {
+              margin: 0;
+              font-size: 1rem;
+            }
+
+            p {
+              margin: 0;
+              font-size: 0.9rem;
+              color: $experience-period-color;
+            }
+          }
+        }
+      }
+
+      &-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem !important;
+
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px $valid-input-bg-color inset;
+}
+
+@keyframes experienceStatusPop {
+  0% {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

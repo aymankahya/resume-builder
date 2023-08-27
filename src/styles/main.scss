@@ -1,0 +1,51 @@
+@import url("https://use.typekit.net/nxj3uuj.css");
+
+//===================//
+//      Variables
+//===================//
+// Colors
+$bg-left-color: rgb(240, 240, 240);
+$bg-right-color: #ffffff;
+$primary-text-color: rgb(25, 25, 25);
+$profile-picture-stroke-color: rgb(215, 215, 215);
+$input-border-color: rgb(226, 226, 226);
+$placeholder-text-color: rgb(163, 163, 163);
+$label-text-color: rgb(131, 131, 131);
+$valid-input-bg-color: rgb(242, 242, 242);
+$seperator-line-color: rgb(220, 220, 220);
+$progress-circle-color: rgb(53, 82, 222);
+$additional-info-btn-color-inactive: rgba(208, 69, 38, 0.5);
+$additional-info-btn-color-active: rgb(208, 69, 38);
+$section-title-hidden: rgb(131, 131, 131);
+$section-description-color: rgb(168, 167, 167);
+$experience-status-color: rgb(234, 234, 234);
+$experience-period-color: rgb(157, 155, 155);
+$experience-valid-status-color: rgb(25, 25, 25);
+$experience-summary-hover-bg: rgb(246, 246, 246);
+$add-button-color: $additional-info-btn-color-active;
+$add-button-bg-color: rgb(250, 236, 232);
+$page-scroller-text-color: rgb(131, 131, 131);
+$page-scroller-nav-button: rgb(131, 131, 131);
+$experience-description-color: rgb(129, 129, 130);
+
+// Sizes
+$builder-padding-sides: 5rem;
+$builder-padding-top: 2rem;
+$section-padding-top-bottom: 2rem;
+$profile-picture-size: 6rem;
+$plus-icon-size: $profile-picture-size * 0.2;
+$progress-bar-size: 3.5rem;
+$check-icon-size: $progress-bar-size * 0.4;
+$resume-width-size: 40rem;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+@mixin transition-ease() {
+  transition: all 0.3s ease-in-out;
+}

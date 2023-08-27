@@ -1,0 +1,155 @@
+@import "main.scss";
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header {
+  padding: $builder-padding-top $builder-padding-sides;
+  border-bottom: 1px solid $seperator-line-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .full-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+    }
+  }
+}
+
+.profile-picture {
+  position: relative;
+  display: grid;
+  place-content: center;
+  background: none;
+
+  img {
+    border-radius: 100%;
+    height: $profile-picture-size;
+    width: $profile-picture-size;
+    object-fit: cover;
+  }
+
+  form {
+    position: absolute;
+    height: $profile-picture-size;
+    width: $profile-picture-size;
+
+    input {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    label {
+      position: absolute;
+      height: $profile-picture-size;
+      width: $profile-picture-size;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      &:first-child {
+        animation: rotate 20s linear infinite;
+
+        circle {
+          transform: scale(1.1) translate(-8px, -8px);
+          stroke: black;
+          transition: all 0.3s linear;
+        }
+      }
+
+      &:nth-child(2) {
+        stroke: black;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  svg {
+    &:first-child {
+      height: $profile-picture-size;
+      fill: none;
+      stroke: $profile-picture-stroke-color;
+      stroke-dasharray: 7px;
+      stroke-width: 1px;
+      stroke-linecap: butt;
+      @include transition-ease();
+
+      circle {
+        @include transition-ease();
+      }
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      top: calc(($profile-picture-size - ($plus-icon-size - 1px)) / 2);
+      left: calc(($profile-picture-size - ($plus-icon-size - 1px)) / 2);
+      height: $plus-icon-size;
+      stroke: $profile-picture-stroke-color;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      @include transition-ease();
+    }
+  }
+}
+
+.progress-bar {
+  position: relative;
+  display: grid;
+  place-content: center;
+
+  svg {
+    &:first-of-type {
+      height: $progress-bar-size;
+      fill: none;
+
+      .base-circle {
+        stroke: $profile-picture-stroke-color;
+        stroke-width: 7px;
+      }
+
+      .dynamic-circle {
+        stroke: $progress-circle-color;
+        stroke-width: 7px;
+        transform: rotate(-76deg);
+        transform-origin: center;
+      }
+    }
+
+    &:nth-of-type(2) {
+      position: absolute;
+      height: $check-icon-size;
+      top: calc(($progress-bar-size - $check-icon-size) / 2);
+      left: calc(($progress-bar-size - $check-icon-size) / 2);
+      stroke-width: 3;
+      stroke: $progress-circle-color;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+
+      line {
+        stroke: $profile-picture-stroke-color;
+      }
+    }
+  }
+}

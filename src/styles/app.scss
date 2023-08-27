@@ -1,0 +1,34 @@
+@import "main.scss";
+
+.main-app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  font-family: runda, sans-serif;
+  font-style: normal;
+  line-height: 1;
+
+  #{&}-leftSide {
+    height: 100%;
+    width: 50vw;
+    background-color: $bg-right-color;
+
+    .builder {
+      height: calc(100% - $profile-picture-size - $builder-padding-top - 3rem);
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  #{&}-rightSide {
+    @extend .main-app-leftSide;
+    background-color: $bg-left-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

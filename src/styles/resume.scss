@@ -1,0 +1,168 @@
+@import "main.scss";
+
+.resume-container {
+  position: relative;
+  display: flex;
+  margin-top: 4rem;
+  height: $resume-width-size * 1.4;
+  width: $resume-width-size;
+  font-family: "work-sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: normal;
+
+  .resume-page {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem 3rem;
+
+    &-upper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid $seperator-line-color;
+
+      .profile-details {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        img {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 100%;
+          object-fit: cover;
+        }
+
+        .fullname-job {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          h1 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+          }
+
+          p {
+            margin: 0;
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .personal-info {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 4px;
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          max-width: 10rem;
+          margin: 0;
+          font-size: 0.7rem;
+          text-align: end;
+
+          svg {
+            height: 1rem;
+            width: 1rem;
+            stroke: black;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+        }
+      }
+    }
+
+    .resume-section {
+      display: flex;
+      align-items: start;
+      gap: 4rem;
+      margin-top: 2rem;
+      width: 100%;
+
+      &.education {
+        gap: 5.3rem;
+      }
+
+      h1 {
+        font-size: 1rem;
+        margin: 0;
+        letter-spacing: 0.5px;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .experiences,
+      .educations {
+        border-bottom: 1px solid $seperator-line-color;
+        width: 100%;
+        .experience-item,
+        .education-item {
+          margin-bottom: 2rem;
+
+          &-upper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-title {
+              display: flex;
+              align-items: center;
+              margin-left: -1.32rem;
+              gap: 4px;
+
+              h1 {
+                width: 15rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+              }
+
+              svg {
+                height: 1rem;
+
+                path {
+                  &:nth-of-type(2) {
+                    fill: $experience-description-color;
+                  }
+                }
+              }
+            }
+
+            h1 {
+              margin: 0;
+            }
+
+            h4 {
+              text-align: end;
+              margin: 0;
+              font-size: 0.6rem;
+              font-weight: 500;
+              color: $experience-description-color;
+            }
+          }
+
+          &-description {
+            margin-top: 5px;
+            p {
+              font-size: 0.68rem;
+              text-align: justify;
+              color: $experience-description-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
