@@ -36,14 +36,14 @@ $profile-picture-size: 6rem;
 $plus-icon-size: $profile-picture-size * 0.2;
 $progress-bar-size: 3.5rem;
 $check-icon-size: $progress-bar-size * 0.4;
-$resume-width-size: 40rem;
+$resume-width-size: 35vw;
 
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
+  font-size: clamp(10px, 0.9vw, 14px);
 }
 
 @mixin transition-ease() {

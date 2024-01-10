@@ -2,6 +2,7 @@ import "../../../styles/header.scss";
 import FullName from "./FullName";
 import ProfilePicture from "./ProfilePicture";
 import ProgressBar from "./ProgressBar";
+import ViewResume from "./ViewResume";
 
 function Header({ firstName, lastName, progress, handlePPUpdate }) {
   return (
@@ -10,7 +11,10 @@ function Header({ firstName, lastName, progress, handlePPUpdate }) {
         <ProfilePicture handleChange={handlePPUpdate} />
         <FullName firstName={firstName} lastName={lastName} />
       </div>
-      <ProgressBar progress={progress} />
+      <div className="right">
+        <ViewResume />
+        <ProgressBar progress={progress} />
+      </div>
     </div>
   );
 }

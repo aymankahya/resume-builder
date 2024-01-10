@@ -27,6 +27,31 @@
       font-weight: 900;
     }
   }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .view-resume {
+      display: none;
+      outline: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .view-resume-icon {
+      color: rgb(215, 215, 215);
+      font-size: 2rem;
+      @include transition-ease();
+
+      &:hover {
+        color: black;
+        @include transition-ease();
+      }
+    }
+  }
 }
 
 .profile-picture {
@@ -151,5 +176,17 @@
         stroke: $profile-picture-stroke-color;
       }
     }
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    padding: $builder-padding-top 3rem;
+  }
+}
+
+@media (max-width: 1110px) {
+  .header .right .view-resume {
+    display: flex;
   }
 }

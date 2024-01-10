@@ -565,3 +565,13 @@ select:-webkit-autofill:focus {
     transform: scale(1);
   }
 }
+
+@media (max-width: 420px) {
+  .section {
+    padding: $section-padding-top-bottom 3rem;
+  }
+
+  .section-form .experience-upper .delete-experience {
+    right: -3.5rem;
+  }
+}
