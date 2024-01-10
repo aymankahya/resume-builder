@@ -43,7 +43,7 @@ $resume-width-size: 35vw;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: clamp(10px, 0.9vw, 14px);
+  font-size: clamp(8px, 0.9vw, 14px);
 }
 
 @mixin transition-ease() {

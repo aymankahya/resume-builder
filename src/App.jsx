@@ -3,7 +3,7 @@ import "./styles/app.scss";
 import Header from "./components/Left Side/Header/Header";
 import Section from "./components/Left Side/Builder/Section";
 import Resume from "./components/Right Side/CV Template/Resume";
-import PageScroller from "./components/Right Side/PageScroller";
+
 import CloseResume from "./components/Right Side/CloseResume";
 
 function App() {
