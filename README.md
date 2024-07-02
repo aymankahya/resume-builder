@@ -4,9 +4,8 @@
 ## Project Description
 
 Resume Builder is a React-based web application designed to help users create professional resumes with ease. This interactive tool provides a user-friendly interface for inputting personal details, work experience, and educational background, and then compiles this information into a well-formatted resume in real-time.
-<p align="center>
   [![Netlify Status](https://api.netlify.com/api/v1/badges/d2317b20-d28e-46cf-a4fa-9b4fb3d89eca/deploy-status)](https://app.netlify.com/sites/resume-pro-builder/deploys)
-</p>
+
 
 ![image](https://github.com/aymankahya/resume-builder/assets/63832251/f5d89aae-9ea2-42ff-8419-ca0acff82d8a)
 
@@ -24,9 +23,7 @@ Resume Builder is a React-based web application designed to help users create pr
 ## Technical Stack & Details
 
 - **Frontend Framework**: React.js
-- **State Management**: React Hooks (useState)
-- **Styling**: SASS/SCSS for advanced styling capabilities
-- **Modular Architecture**: The project is organized into reusable components for easier maintenance and scalability
+- **Styling**: SASS/SCSS for advanced styling
 - **Dynamic Rendering**: Conditional rendering is used to display different sections based on user input and interaction
 
 
