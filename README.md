@@ -7,7 +7,7 @@ Resume Builder is a React-based web application designed to help users create pr
   
 <p align="center">
   <a href="https://app.netlify.com/sites/resume-pro-builder/deploys" target="_blank">
-    <img src="[https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status](https://api.netlify.com/api/v1/badges/d2317b20-d28e-46cf-a4fa-9b4fb3d89eca/deploy-status)" alt="Netlify Status" />
+    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
   </a>
 </p>
 
